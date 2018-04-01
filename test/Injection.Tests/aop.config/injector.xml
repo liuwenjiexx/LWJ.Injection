@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<injector>
+  <callPolicies> 
+    <callPolicy >
+      <behaviours>
+        <behaviour type="LWJ.Injection.ParameterValidatorBehaviour"  >
+          <parameters>
+            <string ></string>
+            <enum type="LWJ.Injection.ParameterValidatorType" >UsageAttribute</enum>
+            <dictionary   isNull="true"/>
+          </parameters>
+          <order>0</order>
+        </behaviour>
+      </behaviours>
+      <matchRules>
+        <matchRuler type="LWJ.Injection.ParameterAttributeMatchRule" >
+          <parameters>
+            <type>LWJ.Injection.ParameterValidatorAttribute</type>
+            <bool>true</bool>
+          </parameters>
+        </matchRuler>
+      </matchRules>
+    </callPolicy>     
+    <callPolicy>
+      <behaviours>
+        <behaviour type="LWJ.Injection.CachingCallBehaviour"  />
+      </behaviours>
+      <matchRules>
+        <matchRuler type="LWJ.Injection.MethodAttributeMatchRule" >
+          <parameters>
+            <type>LWJ.Injection.CachingCallAttribute</type>
+            <bool>true</bool>
+          </parameters>
+        </matchRuler>
+      </matchRules>
+    </callPolicy>
+    <callPolicy>
+      <behaviours>
+        <behaviour type="LWJ.Injection.CallerInfoBehavior"  />
+      </behaviours>
+      <matchRules>
+        <matchRuler type="LWJ.Injection.ParameterAttributeMatchRule" >
+          <parameters>
+            <type>LWJ.Injection.CallerInfoAttribute</type>
+            <bool>true</bool>
+          </parameters>
+        </matchRuler>
+      </matchRules>
+    </callPolicy>
+    <callPolicy>
+      <behaviours>
+        <behaviour type="LWJ.Injection.PermissionCallBehaviour"  />
+      </behaviours>
+      <matchRules>
+        <matchRuler type="LWJ.Injection.MethodAttributeMatchRule" >
+          <parameters>
+            <type>LWJ.Injection.PermissionAttribute</type>
+            <bool>true</bool>
+          </parameters>
+        </matchRuler>
+      </matchRules>
+    </callPolicy>
+    <callPolicy>
+      <behaviours>
+        <behaviour type="LWJ.Injection.PerformanceBehaviour"  />
+      </behaviours>
+      <matchRules>
+        <matchRuler type="LWJ.Injection.MethodAttributeMatchRule" >
+          <parameters>
+            <type>LWJ.Injection.PerformanceTimeAttribute</type>
+            <bool>true</bool>
+          </parameters>
+        </matchRuler>
+      </matchRules>
+    </callPolicy>
+  </callPolicies>
+</injector>

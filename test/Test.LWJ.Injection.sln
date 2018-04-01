@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26020.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.LWJ.Injection", "Test.LWJ.Injection\Test.LWJ.Injection.csproj", "{A58A6CA2-0931-45C1-B2BE-5D809AB51168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LWJ.Injection", "..\Src\LWJ.Injection\LWJ.Injection.csproj", "{86749932-F354-437C-B8CB-226CD01C5CC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LWJ.Object", "..\..\LWJ.Object\src\LWJ.Object\LWJ.Object.csproj", "{D669BA4F-DDE4-4DF2-B025-6F993B167861}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LWJ.Serialization", "..\..\LWJ.Serialization\src\LWJ.Serialization\LWJ.Serialization.csproj", "{8D14548F-0F2A-4DC1-A191-D8D6D128CD12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LWJ.Injection.Extensions", "..\src\LWJ.Injection.Extensions\LWJ.Injection.Extensions.csproj", "{35F574D3-2269-4C5A-A175-382B80D99490}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A58A6CA2-0931-45C1-B2BE-5D809AB51168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58A6CA2-0931-45C1-B2BE-5D809AB51168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58A6CA2-0931-45C1-B2BE-5D809AB51168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58A6CA2-0931-45C1-B2BE-5D809AB51168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86749932-F354-437C-B8CB-226CD01C5CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86749932-F354-437C-B8CB-226CD01C5CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86749932-F354-437C-B8CB-226CD01C5CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86749932-F354-437C-B8CB-226CD01C5CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D669BA4F-DDE4-4DF2-B025-6F993B167861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D669BA4F-DDE4-4DF2-B025-6F993B167861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D669BA4F-DDE4-4DF2-B025-6F993B167861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D669BA4F-DDE4-4DF2-B025-6F993B167861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D14548F-0F2A-4DC1-A191-D8D6D128CD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D14548F-0F2A-4DC1-A191-D8D6D128CD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D14548F-0F2A-4DC1-A191-D8D6D128CD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D14548F-0F2A-4DC1-A191-D8D6D128CD12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F574D3-2269-4C5A-A175-382B80D99490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F574D3-2269-4C5A-A175-382B80D99490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F574D3-2269-4C5A-A175-382B80D99490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F574D3-2269-4C5A-A175-382B80D99490}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

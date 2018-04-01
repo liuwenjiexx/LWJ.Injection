@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<injector>
+
+  <callPolicies>
+    <callPolicy>
+      <matchRulers>
+        <matchRuler type="MethodNameMatchRule">
+          <parameters>
+            <type>LWJ.Injection.Test.ValidatorTest.IRangeClass</type>
+            <string>Int32Range1_100</string>
+          </parameters>
+        </matchRuler>
+      </matchRulers>
+      <behaviours>
+        <behaviour type="ParameterValidatorBehaviour"  >
+          <parameters>
+            <string  >n</string>
+            <enum type="LWJ.Injection.ParameterValidatorType" >range</enum>
+            <dictionary keyType="string" valueType="object"> 
+                <int key="min" >1</int> 
+                <int key="max" >100</int>              
+            </dictionary> 
+          </parameters>
+        </behaviour>
+      </behaviours>
+    </callPolicy>
+  </callPolicies>
+  <array arrayType="array/list" itemType="int">
+    <int>1</int>
+  </array>
+</injector>

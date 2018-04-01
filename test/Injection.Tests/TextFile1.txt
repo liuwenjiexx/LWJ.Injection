@@ -1,0 +1,175 @@
+﻿/*
+        static IList<AopMemberMetadata> GetProxyMembers(Type proxyType, Type targetType)
+        {
+            List<AopMemberMetadata> list = new List<AopMemberMetadata>();
+
+            BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.InvokeMethod | BindingFlags.SetField | BindingFlags.GetField | BindingFlags.SetProperty | BindingFlags.GetProperty;
+            ProxyMemberAttribute memberAttr;
+            AopMemberMetadata metadata;
+            string memberName;
+            MethodInfo proxyMethod;
+            MethodInfo targetMethod;
+            var targetMethods = targetType.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod);
+
+            foreach (var member in proxyType.GetMembers(bindingFlags))
+            {
+                if (member.IsDefined(typeof(IgnoreProxyMemberAttribute), false))
+                    continue;
+                memberAttr = member.GetCustomAttribute<ProxyMemberAttribute>(true);
+                if (memberAttr == null)
+                    continue;
+                targetMethod = null;
+                memberName = null;
+
+                if (memberAttr != null)
+                {
+                    memberName = memberAttr.Name;
+                }
+
+                if (string.IsNullOrEmpty(memberAttr.Name))
+                    memberName = member.Name;
+                if (member.MemberType == MemberTypes.Method)
+                {
+                    proxyMethod = (MethodInfo)member;
+                    var proxyArgTypes = proxyMethod.GetParameters().Select(o => o.ParameterType).ToArray();
+                    foreach (var tm in targetMethods)
+                    {
+                        if (tm.Name != memberName)
+                            continue;
+                        if (tm.IsMatch(proxyArgTypes))
+                        {
+                            targetMethod = tm;
+                            break;
+                        }
+                    }
+                    if (targetMethod == null)
+                        throw new AopException("proxy  target type <" + targetType.FullName + "> not contains member <" + memberName + "> ");
+
+                    metadata = new AopMemberMetadata(targetMethod);
+                    metadata.Name = memberName;
+
+                    list.Add(metadata);
+                }
+                else
+                {
+
+
+                    switch (member.MemberType)
+                    {
+                        case MemberTypes.Method:
+                            //  method = (MethodInfo)member;
+
+                            //metadata.MemberType = member.MemberType;
+
+                            //metadata.Method = method;
+                            //metadata.Parameters = method.GetParameters();
+
+                            break;
+                        case MemberTypes.Property:
+                            var p = (PropertyInfo)member;
+                            var targetProperty = targetType.GetProperty(memberName);
+                            if (targetProperty == null)
+                                throw new AopException("proxy target type <" + targetType.FullName + "> not contains property <" + memberName + ">");
+                            if (targetProperty.PropertyType != p.PropertyType)
+                                throw new AopException("proxy target type <" + targetType.FullName + "> property <" + memberName + "> value type not type <" + p.PropertyType.FullName + ">");
+                            //   if (p.CanWrite)
+                            //      {
+                            targetMethod = targetProperty.GetSetMethod(true);
+                            if (IsMatchMethod(targetMethod))
+                            {
+                                metadata = new AopMemberMetadata(targetMethod);
+                                //metadata.MemberType = member.MemberType;
+                                metadata.Name = "set_" + memberName;
+                                // metadata.Method = method;
+                                //metadata.Property = p;
+                                list.Add(metadata);
+                            }
+                            //    }
+
+                            //  if (p.CanRead)
+                            //  {
+                            targetMethod = targetProperty.GetGetMethod(true);
+                            if (IsMatchMethod(targetMethod))
+                            {
+                                metadata = new AopMemberMetadata(targetMethod);
+                                //   metadata.MemberType = member.MemberType;
+                                metadata.Name = "get_" + memberName;
+                                //metadata.Method = method;
+                                //metadata.Property = p;
+                                list.Add(metadata);
+                            }
+
+                            //     }
+                            break;
+                        case MemberTypes.Event:
+                            EventInfo eventInfo = (EventInfo)member;
+                            var targetEvent = targetType.GetEvent(memberName);
+                            if (targetEvent == null)
+                                throw new AopException("proxy target type <" + targetType.FullName + "> not contains property <" + memberName + ">");
+                            if (targetEvent.EventHandlerType != eventInfo.EventHandlerType)
+                                throw new AopException("proxy target type <" + targetType.FullName + "> event <" + memberName + "> event handler type not type <" + eventInfo.EventHandlerType.FullName + ">");
+
+                            targetMethod = targetEvent.GetAddMethod(true);
+                            if (targetMethod != null)
+                            {
+                                metadata = new AopMemberMetadata(targetMethod);
+                                metadata.Name = "add_" + memberName;
+                                list.Add(metadata);
+                            }
+                            targetMethod = targetEvent.GetRemoveMethod(true);
+                            if (targetMethod != null)
+                            {
+                                metadata = new AopMemberMetadata(targetMethod);
+                                metadata.Name = "remove_" + memberName;
+                                list.Add(metadata);
+                            }
+                            break;
+
+                    }
+
+                }
+
+
+            }
+            return list;
+        }
+        */
+        //ProxyMemberMetadata GetMethod(string name)
+        //{
+        //    ProxyMemberMetadata metadata;
+        //    if (!members.TryGetValue(name, out metadata))
+        //    {
+        //        throw new InjectException("<" + targetType.FullName + "> not contains proxy method <" + name + ">");
+        //    }
+        //    return metadata;
+        //}
+
+		
+                //if (builderStrategys != null)
+                //{
+                //    foreach (var builderStrategy in builderStrategys)
+                //    {
+                //        builderStrategy.BeforeBuilder(context);
+                //        if (context.Instance != instance)
+                //        {
+                //            instance = context.Instance;
+                //            if (!mapping.interfaceType.IsAssignableFrom(context.Instance.GetType()))
+                //                throw new Exception(string.Format("interface type <{0}> not is assignable from type <1>", mapping.interfaceType.FullName, context.Instance.GetType().FullName));
+                //        }
+                //    }
+                //}
+                //if (builderStrategys != null)
+                //{
+
+                //    foreach (var builderStrategy in builderStrategys)
+                //    {
+                //        builderStrategy.AfterBuilder(context);
+
+                //        if (instance != context.Instance)
+                //        {
+                //            instance = context.Instance;
+                //            if (!mapping.interfaceType.IsAssignableFrom(context.Instance.GetType()))
+                //                throw new Exception(string.Format("interface type <{0}> not is assignable from type <1>", mapping.interfaceType.FullName, context.Instance.GetType().FullName));
+                //        }
+                //    }
+                //}
